@@ -1,8 +1,9 @@
 # DOM_LogIn
-The main purpose of this project is to continue learning how to use DOM and how to do a LogIn without using a backend. It was made for Consorci students. 
+El objetivo de este ejercicio es seguir haciendo uso del DOM y recrear un LogIn.  
 
-Habrá una serie de ejercicios que tendréis que ir haciendo. El propósito es conseguir hacer 3 inputs y un botón de submit.
-Yo he usado boostrap, sin embargo podéis instalaros Tailwind o bien copiaros otro repo que lo tenga instalado.
+Tendremos para ello que hacer 3 inputs (username, password y confirmPassword) y un botón de submit usando CSS/Tailwid/Boostrap, para el resto de datos lo haremos manipulando el DOM.
+
+![Alt text](https://github.com/bguiomar/DOM_LogIn/blob/main/DOM_LogIn.png)
 
 ## Ejercicio 1:
 Colocar el título <label> delante de cada input: username, password y confirmPassword 
@@ -19,6 +20,6 @@ Asegurarse que el botón de Registrarse está deshabilitado hasta que el usuario
 ## Ejercicio 5:
 Cuando el usuario haga click en el botón "Registrarse", aparezca un mensaje informandonos que el registro se ha hecho.
 
-Cuando os bajeis el repositorio, acordaros de hacer "npm install" para que se os instalen todas las dependencias(bootstrap). 
+Cuando os bajeis el repositorio, acordaros de hacer `` npm install `` para que se os instalen todas las dependencias, en este caso se os instalará `Bootstrap` porque lo he usado para dar estilo. 
 
 Espero disfrutéis del ejercicio :)
