@@ -2,6 +2,7 @@
 El objetivo de este ejercicio es seguir haciendo uso del DOM y recrear un LogIn.  
 
 Tendremos para ello que hacer 3 inputs (username, password y confirmPassword) y un botón de submit que lo escribiremos en el HTML y les daremos algo de estilo. En mi caso usé `bootstrap`, para el resto de datos/acciones lo haremos manipulando el DOM.
+![Alt text](https://github.com/bguiomar/DOM_LogIn/blob/main/inputs_solo.png)
 
 ## Ejercicio 1:
 Colocar el título <label> delante de cada input: username, password y confirmPassword 
