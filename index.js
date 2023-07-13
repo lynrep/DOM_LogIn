@@ -3,16 +3,13 @@
   ------------
   Add a label to each of the input fields: username, password, confirm password
 */
-const form = document.getElementById('form');
 
-const username = document.getElementById('username');
+document.getElementById('username').insertAdjacentHTML('beforeBegin','<label for="username"> Username </label>');
 
-const password = document.getElementById('password');
+document.getElementById('password').insertAdjacentHTML('beforeBegin','<label for="password"> Password </label>');
 
-const confirmPassword = document.getElementById('confirmPassword');
+document.getElementById('confirmPassword').insertAdjacentHTML('beforeBegin','<label for="confirmPassword"> Confirm Password </label>');
 
-
-//.insertAdjacentHTML('beforeBegin','<label for="confirmPassword"> Confirm Password </label>')
 /*
   Exercise 02
   -----------
@@ -41,36 +38,46 @@ document.getElementById('confirmPassword').addEventListener('blur',checkInput);
   Add a further validation to check if the user input in the password and confirm password inputs match.  Show an error message if they do not.
 */
 
-const checkPassword = (password, confirmPassword) => {
-
-  if (password.value !== confirmPassword.value){
-    document.target.value.insertAdjacentHTML('afterEnd', '<span class="text-danger"> Password should match </span>')
-  }
-};
-
-document.getElementById('password').addEventListener('blur',checkPassword);
-document.getElementById('confirmPassword').addEventListener('blur',checkPassword);
+document.getElementById('confirmPassword').addEventListener('blur', (event) =>{
+  if (event.target.value !== document.getElementById('password').value) 
+  event.target.insertAdjacentHTML('afterEnd', '<span class="text-danger"> Password Should Match </span>')
+})
   
 /*
   Exercise 04
   -----------
 Ensure the ‘Register’ button is disabled until the user has entered valid data into all the input fields.  Once they have, the registration button should then be enabled.
 */
-function validateInput(){
-  console.log("validate input");
-}
-document.querySelector("button")
- .addEventListener("click", event =>{
-  event.preventDefault();
- })
+const btn = document.querySelector('button');
+btn.setAttribute('disabled', 'true');
+document.getElementById('form').addEventListener('change', (event) => {
+  let formFilled = Array.form(document.querySelectorAll('input')).every
+  (input => input.value)
+  if (formFilled){
+    btn.removeAttribute('disabled')
+  } else {
+    btn.setAttribute('disabled', true);
+  }
+})
+
+
+
+
+
 /*
   Exercise 05
   -----------
 When the user clicks the ‘Register’ button, a message should be displayed informing them of a successful user registration.
 */
 
+const form1 = document.getElementById('form')
 
-
-
-
+form1.addEventListener('submit', (event) => {
+event.preventDefault()
+const alert = document.createElement('div');
+alert.classList.add('alert', 'alert-success');
+alert.innerText = 'User registered successfully!';
+form1.prepend(alert);
+}
+)
 
