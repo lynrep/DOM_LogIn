@@ -3,13 +3,16 @@
   ------------
   Add a label to each of the input fields: username, password, confirm password
 */
-document.getElementById('username').insertAdjacentHTML('beforeBegin','<label for="username"> Username </label>');
+const form = document.getElementById('form');
 
-document.getElementById('password').insertAdjacentHTML('beforeBegin','<label for="password"> Password </label>');
+const username = document.getElementById('username');
 
-document.getElementById('confirmPassword').insertAdjacentHTML('beforeBegin','<label for="confirmPassword"> Confirm Password </label>');
+const password = document.getElementById('password');
+
+const confirmPassword = document.getElementById('confirmPassword');
 
 
+//.insertAdjacentHTML('beforeBegin','<label for="confirmPassword"> Confirm Password </label>')
 /*
   Exercise 02
   -----------
@@ -25,6 +28,7 @@ const checkInput = (event) => {
   
   if (errorElement && event.target.value !== '') { errorElement.forEach(elem => elem.remove());
  }
+
 };
 
 document.getElementById('username').addEventListener('blur',checkInput);
@@ -37,15 +41,28 @@ document.getElementById('confirmPassword').addEventListener('blur',checkInput);
   Add a further validation to check if the user input in the password and confirm password inputs match.  Show an error message if they do not.
 */
 
+const checkPassword = (password, confirmPassword) => {
 
+  if (password.value !== confirmPassword.value){
+    document.target.value.insertAdjacentHTML('afterEnd', '<span class="text-danger"> Password did not match </span>')
+  }
+};
 
+document.getElementById('password').addEventListener('blur',checkPassword);
+document.getElementById('confirmPassword').addEventListener('blur',checkPassword);
+  
 /*
   Exercise 04
   -----------
 Ensure the ‘Register’ button is disabled until the user has entered valid data into all the input fields.  Once they have, the registration button should then be enabled.
 */
-
-
+function validateInput(){
+  console.log("validate input");
+}
+document.querySelector("button")
+ .addEventListener("click", event =>{
+  event.preventDefault();
+ })
 /*
   Exercise 05
   -----------
