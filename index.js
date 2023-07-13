@@ -44,7 +44,7 @@ document.getElementById('confirmPassword').addEventListener('blur',checkInput);
 const checkPassword = (password, confirmPassword) => {
 
   if (password.value !== confirmPassword.value){
-    document.target.value.insertAdjacentHTML('afterEnd', '<span class="text-danger"> Password did not match </span>')
+    document.target.value.insertAdjacentHTML('afterEnd', '<span class="text-danger"> Password should match </span>')
   }
 };
 
